@@ -1,0 +1,696 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* macOS Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Base font size - controlled by settings */
+    --base-font-size: 16px;
+    
+    /* Desktop colors */
+    --desktop-bg: 240 10% 6%;
+    --desktop-wallpaper-accent: 220 70% 20%;
+    
+    /* Glass effect tokens */
+    --glass-bg: 0 0% 100% / 0.08;
+    --glass-border: 0 0% 100% / 0.12;
+    --glass-highlight: 0 0% 100% / 0.04;
+    --glass-blur: 16px;
+    --glass-saturate: 180%;
+    
+    /* macOS accent colors */
+    --macos-blue: 211 100% 50%;
+    --macos-red: 350 100% 62%;
+    --macos-yellow: 45 100% 51%;
+    --macos-green: 140 70% 45%;
+    
+    /* Extended accent palette */
+    --macos-accent-blue: 211 100% 50%;
+    --macos-accent-purple: 280 80% 60%;
+    --macos-accent-pink: 330 80% 60%;
+    --macos-accent-orange: 25 95% 55%;
+    --macos-accent-yellow: 45 100% 51%;
+    --macos-accent-green: 140 70% 45%;
+    --macos-accent-cyan: 185 90% 45%;
+    
+    /* Traffic light colors */
+    --macos-traffic-red: 0 85% 60%;
+    --macos-traffic-yellow: 45 100% 55%;
+    --macos-traffic-green: 130 60% 50%;
+    
+    /* Dock */
+    --dock-bg: 0 0% 100% / 0.12;
+    --dock-border: 0 0% 100% / 0.18;
+    --dock-size: 56px;
+    --dock-hover-scale: 1.8;
+    
+    /* Menu bar */
+    --menubar-bg: 0 0% 0% / 0.35;
+    --menubar-height: 28px;
+    
+    /* Shadows */
+    --shadow-window: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    --shadow-dock: 0 8px 32px hsl(0 0% 0% / 0.4);
+    
+    /* Motion */
+    --motion-smooth: cubic-bezier(0.2, 0.9, 0.2, 1);
+    --motion-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Window glass text - ensures readability */
+    --window-text: 0 0% 95%;
+    --window-text-muted: 0 0% 70%;
+    
+    /* Base shadcn tokens - dark theme for macOS */
+    --background: 240 10% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 5% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 240 5% 18%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 350 100% 62%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100% / 0.12;
+    --input: 240 5% 18%;
+    --ring: 211 100% 50%;
+
+    --radius: 12px;
+
+    --sidebar-background: 240 10% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 100% / 0.1;
+    --sidebar-ring: 211 100% 50%;
+  }
+
+  /* Light theme */
+  .light {
+    --desktop-bg: 220 20% 96%;
+    --desktop-wallpaper-accent: 220 60% 85%;
+    
+    /* Glass effect tokens - light mode - more opaque for readability */
+    --glass-bg: 0 0% 100% / 0.85;
+    --glass-border: 0 0% 0% / 0.1;
+    --glass-highlight: 0 0% 100% / 0.6;
+    
+    /* Window glass text - dark for light mode */
+    --window-text: 240 10% 10%;
+    --window-text-muted: 240 5% 35%;
+    
+    /* Dock - light mode */
+    --dock-bg: 0 0% 100% / 0.8;
+    --dock-border: 0 0% 0% / 0.1;
+    
+    /* Menu bar - light mode */
+    --menubar-bg: 0 0% 100% / 0.8;
+    
+    /* Shadows - light mode */
+    --shadow-window: 0 25px 50px -12px hsl(0 0% 0% / 0.15);
+    --shadow-dock: 0 8px 32px hsl(0 0% 0% / 0.1);
+    
+    /* Base tokens - light theme */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 94%;
+    --secondary-foreground: 240 10% 10%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 240 5% 35%;
+
+    --accent: 220 15% 94%;
+    --accent-foreground: 240 10% 10%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 0% / 0.1;
+    --input: 220 15% 94%;
+    --ring: 211 100% 50%;
+
+    --sidebar-background: 220 15% 98%;
+    --sidebar-foreground: 240 10% 20%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 94%;
+    --sidebar-accent-foreground: 240 10% 10%;
+    --sidebar-border: 0 0% 0% / 0.08;
+    --sidebar-ring: 211 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    font-size: var(--base-font-size);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+@layer components {
+  /* Liquid Glass Effect */
+  .glass {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--glass-bg)),
+      hsl(var(--glass-bg))
+    );
+    border: 1px solid hsl(var(--glass-border));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-window);
+    color: hsl(var(--window-text));
+  }
+
+  .glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glass-highlight)) 0%,
+      transparent 50%
+    );
+    border-radius: inherit;
+  }
+
+  /* Glass text classes for readability */
+  .glass-text {
+    color: hsl(var(--window-text));
+  }
+
+  .glass-text-muted {
+    color: hsl(var(--window-text-muted));
+  }
+
+  /* Dock glass style */
+  .dock-glass {
+    background: hsl(var(--dock-bg));
+    border: 1px solid hsl(var(--dock-border));
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: var(--shadow-dock);
+  }
+
+  /* Menu bar glass */
+  .menubar-glass {
+    background: hsl(var(--menubar-bg));
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    color: hsl(var(--window-text));
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Traffic light button styles */
+  .traffic-light {
+    @apply w-3 h-3 rounded-full transition-all duration-150;
+  }
+  
+  .traffic-close {
+    @apply bg-[hsl(var(--macos-red))] hover:brightness-110;
+  }
+  
+  .traffic-minimize {
+    @apply bg-[hsl(var(--macos-yellow))] hover:brightness-110;
+  }
+  
+  .traffic-maximize {
+    @apply bg-[hsl(var(--macos-green))] hover:brightness-110;
+  }
+
+  /* Safe area for mobile devices */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  /* Smooth theme transition */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Settings: reduce motion class */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Settings: high contrast mode */
+.high-contrast {
+  --glass-bg: 0 0% 100% / 0.15;
+  --glass-border: 0 0% 100% / 0.25;
+  --foreground: 0 0% 100%;
+  --muted-foreground: 0 0% 85%;
+  --window-text: 0 0% 100%;
+  --window-text-muted: 0 0% 85%;
+}
+
+.light.high-contrast {
+  --glass-bg: 0 0% 100% / 0.95;
+  --glass-border: 0 0% 0% / 0.25;
+  --foreground: 0 0% 0%;
+  --muted-foreground: 0 0% 20%;
+  --window-text: 0 0% 0%;
+  --window-text-muted: 0 0% 20%;
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+/* Theme transition on html element */
+html {
+  transition: background-color 0.3s ease, font-size 0.2s ease;
+}
+
+html.dark,
+html.light {
+  color-scheme: light dark;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Font size variants for accessibility */
+html.font-small {
+  --base-font-size: 14px;
+}
+
+html.font-medium {
+  --base-font-size: 16px;
+}
+
+html.font-large {
+  --base-font-size: 18px;
+}
+
+/* Genie Effect Animations */
+@keyframes genie-minimize {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+    opacity: 1;
+    transform-origin: bottom center;
+  }
+  30% {
+    transform: scale(0.8, 0.9) translateX(0) translateY(20px);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(0.4, 0.6) translateX(calc(var(--genie-target-x) * 0.5)) translateY(calc(var(--genie-target-y) * 0.5));
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.05) translateX(var(--genie-target-x)) translateY(var(--genie-target-y));
+    opacity: 0;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes genie-restore {
+  0% {
+    transform: scale(0.05) translateX(var(--genie-start-x)) translateY(var(--genie-start-y));
+    opacity: 0;
+    transform-origin: bottom center;
+  }
+  40% {
+    transform: scale(0.4, 0.6) translateX(calc(var(--genie-start-x) * 0.5)) translateY(calc(var(--genie-start-y) * 0.5));
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(0.8, 0.9) translateX(0) translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateX(0) translateY(0);
+    opacity: 1;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes window-open {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-genie-minimize {
+  animation: genie-minimize 0.4s var(--motion-smooth) forwards;
+}
+
+.animate-genie-restore {
+  animation: genie-restore 0.4s var(--motion-smooth) forwards;
+}
+
+.animate-window-open {
+  animation: window-open 0.25s var(--motion-smooth) forwards;
+}
+
+/* iOS Home Screen Animations */
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+@keyframes ios-app-open {
+  0% {
+    transform: translate(var(--launch-x, 0), var(--launch-y, 0)) scale(0.15);
+    opacity: 0;
+    border-radius: 18px;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+    border-radius: 0;
+  }
+}
+
+@keyframes ios-app-close {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(100%) scale(0.9);
+    opacity: 0;
+    border-radius: 24px;
+  }
+}
+
+@keyframes cc-slide-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cc-slide-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.15s ease-in-out infinite;
+}
+
+.animate-ios-app-open {
+  animation: ios-app-open 0.32s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+.animate-ios-app-close {
+  animation: ios-app-close 0.28s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+.animate-cc-slide-down {
+  animation: cc-slide-down 0.3s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+.animate-cc-slide-up {
+  animation: cc-slide-up 0.28s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+/* iOS Liquid Glass Design System */
+.ios-liquid-glass {
+  background: linear-gradient(
+    180deg,
+    hsl(0 0% 100% / 0.12) 0%,
+    hsl(0 0% 100% / 0.04) 100%
+  );
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid hsl(0 0% 100% / 0.08);
+  box-shadow: 0 8px 32px hsl(0 0% 0% / 0.25);
+}
+
+.light .ios-liquid-glass {
+  background: linear-gradient(
+    180deg,
+    hsl(0 0% 100% / 0.85) 0%,
+    hsl(0 0% 100% / 0.7) 100%
+  );
+  border: 1px solid hsl(0 0% 0% / 0.08);
+  box-shadow: 0 8px 32px hsl(0 0% 0% / 0.1);
+}
+
+.ios-dock-glass {
+  background: linear-gradient(
+    180deg,
+    hsl(0 0% 100% / 0.18) 0%,
+    hsl(0 0% 100% / 0.08) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid hsl(0 0% 100% / 0.12);
+  border-radius: 32px;
+  box-shadow: 0 8px 40px hsl(0 0% 0% / 0.3);
+}
+
+.light .ios-dock-glass {
+  background: linear-gradient(
+    180deg,
+    hsl(0 0% 100% / 0.9) 0%,
+    hsl(0 0% 100% / 0.75) 100%
+  );
+  border: 1px solid hsl(0 0% 0% / 0.06);
+  box-shadow: 0 8px 40px hsl(0 0% 0% / 0.12);
+}
+
+.ios-widget-glass {
+  background: linear-gradient(
+    135deg,
+    hsl(0 0% 100% / 0.14) 0%,
+    hsl(0 0% 100% / 0.06) 100%
+  );
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid hsl(0 0% 100% / 0.1);
+  box-shadow: 0 4px 24px hsl(0 0% 0% / 0.2);
+}
+
+.light .ios-widget-glass {
+  background: linear-gradient(
+    135deg,
+    hsl(0 0% 100% / 0.85) 0%,
+    hsl(0 0% 100% / 0.7) 100%
+  );
+  border: 1px solid hsl(0 0% 0% / 0.08);
+  box-shadow: 0 4px 24px hsl(0 0% 0% / 0.08);
+}
+
+.ios-widget-sheen {
+  background: linear-gradient(
+    135deg,
+    hsl(0 0% 100% / 0.15) 0%,
+    transparent 50%
+  );
+}
+
+.ios-app-icon {
+  border-radius: 18px;
+  background: hsl(var(--secondary));
+}
+
+.ios-icon-highlight {
+  background: linear-gradient(
+    135deg,
+    hsl(0 0% 100% / 0.25) 0%,
+    transparent 40%
+  );
+  border-radius: inherit;
+}
+
+.ios-icon-label {
+  color: hsl(var(--foreground));
+  text-shadow: 0 1px 3px hsl(0 0% 0% / 0.4);
+}
+
+.light .ios-icon-label {
+  text-shadow: 0 1px 2px hsl(0 0% 100% / 0.8);
+}
+
+.ios-status-text {
+  color: hsl(var(--foreground));
+  text-shadow: 0 1px 2px hsl(0 0% 0% / 0.3);
+}
+
+.ios-wallpaper-blur {
+  background: hsl(0 0% 0% / 0.15);
+  backdrop-filter: blur(2px) saturate(120%);
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+}
+
+.light .ios-wallpaper-blur {
+  background: hsl(0 0% 100% / 0.1);
+}
+
+.ios-app-container {
+  background: hsl(var(--background));
+}
+
+.ios-app-header {
+  background: hsl(var(--background) / 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.ios-control-tile {
+  background: hsl(0 0% 100% / 0.12);
+  border-radius: 14px;
+  border: 1px solid hsl(0 0% 100% / 0.08);
+  transition: all 0.2s ease;
+}
+
+.light .ios-control-tile {
+  background: hsl(0 0% 100% / 0.7);
+  border: 1px solid hsl(0 0% 0% / 0.06);
+}
+
+.ios-control-tile.active {
+  background: hsl(var(--primary) / 0.2);
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+.ios-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: hsl(0 0% 100% / 0.2);
+}
+
+.light .ios-slider {
+  background: hsl(0 0% 0% / 0.1);
+}
+
+.ios-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px hsl(0 0% 0% / 0.3);
+  cursor: pointer;
+}
+
+.shadow-ios-icon {
+  box-shadow: 0 4px 12px hsl(0 0% 0% / 0.25);
+}
+
+/* Touch manipulation for iOS feel */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS Edit Mode Wiggle Animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.15s ease-in-out infinite;
+}
